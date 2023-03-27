@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Postdelivery = require('../models/postBin')
+const Postbin = require('../models/postBin')
  
 
 const router = express.Router();
@@ -8,7 +8,7 @@ const router = express.Router();
 //save posts
 
 router.post('/post/save',(req,res)=>{
-    let newPost = new Postdelivery(req.body);
+    let newPost = new Postbin(req.body);
 
     newPost.save((err)=>{
         if(err){
@@ -26,7 +26,7 @@ router.post('/post/save',(req,res)=>{
 //get posts
 
 router.get('/posts',(req,res)=>{
-    Postdelivery.find().exec((err,postsDelivery)=>{
+    Postbin.find().exec((err,postsDelivery)=>{
         if(err){
             return res.status(400).json({
                 error:err
@@ -43,7 +43,7 @@ router.get('/posts',(req,res)=>{
 //update Posts
 
 router.put('/post/update/:id',(req,res)=>{
-    Postdelivery.findByIdAndUpdate(
+    Postbin.findByIdAndUpdate(
         req.params.id,
         {
             $set:req.body
@@ -64,7 +64,7 @@ router.put('/post/update/:id',(req,res)=>{
 
 //delete post
 router.delete('/post/delete/:id',(req,res)=>{
-    Postdelivery.findByIdAndRemove(req.params.id).exec((err,deletedDelivery)=>{
+    Postbin.findByIdAndRemove(req.params.id).exec((err,deletedDelivery)=>{
         if(err)
             return res.status(400).json({
                 massage:"Delete unsuccesful",err
