@@ -7,7 +7,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 //import routes
-const postBin = require('./routes/postD');
+const postBin = require('./routes/postBin');
  
  
  
