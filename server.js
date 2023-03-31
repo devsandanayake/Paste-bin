@@ -5,14 +5,11 @@ const  cors = require('cors');
 const app = express();
 
 
-const PORT = process.env.PORT || 8080;
+const PORT =  8060;
 //import routes
 const postBin = require('./routes/postBin');
  
  
- 
-
-
 
 //app middelware
 app.use(bodyParser.json());
@@ -33,7 +30,7 @@ app.get("/",(req,res)=>{
 })
 
  
-const DB_URL='mongodb+srv://twg:pastebin@mernapp.1zdu8uy.mongodb.net/mernCrud?retryWrites=true&w=majority'
+const DB_URL='mongodb+srv://dev:Mng77@mernapp.zwstxds.mongodb.net/PostBin?retryWrites=true&w=majority'
 mongoose.set('strictQuery', false);
 mongoose.set('strictQuery', true);
 

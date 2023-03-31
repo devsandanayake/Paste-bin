@@ -1,7 +1,6 @@
- import React,{Component} from "react";
- import {BrowserRouter,Route, Routes} from 'react-router-dom'
- import AddBin from "./components/addBin";
-
+import React,{Component} from "react";
+import {BrowserRouter,Route, Routes} from 'react-router-dom';
+import AddBin from "./componenets/AddBin";
   
   
  
@@ -10,7 +9,7 @@
      return(
        <BrowserRouter>
          <div className="container">
-         <NavBar></NavBar>
+         
          <Routes>
          <Route exact  path="/"  element={<AddBin/>}/>
          

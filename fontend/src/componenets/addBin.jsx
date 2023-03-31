@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-export default class CreatePost extends Component {
+export default class AddBin extends Component {
  
   constructor(props){
     super(props);
@@ -36,7 +36,7 @@ export default class CreatePost extends Component {
 
     
 
-    axios.post("http://localhost:8000/post/save",data).then((res)=>{
+    axios.post("http://localhost:8060/post/save",data).then((res)=>{
       if(res.data.success){
         this.setState({
             Topic:"",
